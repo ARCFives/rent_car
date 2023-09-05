@@ -1,0 +1,41 @@
+@base_url = http://localhost:8080
+@authToken = {{login.response.body.token}}
+
+# @name login
+POST {{base_url}}/oauth/login
+Content-Type: application/json
+
+{
+	"email": "cliente@email.com",
+	"password": "12345678"
+}
+
+###
+
+# @name list_all_booking_user_id
+
+GET {{base_url}}/booking/8b0e0a51-7bae-4e5d-bea3-6c2792160009/listall
+Authorization: Bearer {{authToken}}
+
+###
+
+# @name create_booking
+POST  {{base_url}}/booking/create
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+	"carName": "Fiat Mobi",
+  "catchAgency": "Niterói",
+  "catchDate": "22/10/2023",
+  "catchHours": "08:00",
+  "catchLocation": "Rua de Niterói",
+  "deliveryAgency": "São Gonçalo",
+  "deliveryDate": "24/10/2023",
+  "deliveryHours": "08:00",
+  "deliveryLocation": "Rua de SG",
+  "totalBooking": "125,80",
+  "userID": "e9dd9588-5cbf-484b-8be2-7b0d6aa4dc82"
+}
+
+###

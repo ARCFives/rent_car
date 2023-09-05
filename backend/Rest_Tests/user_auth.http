@@ -1,0 +1,37 @@
+@base_url = http://localhost:8080/oauth
+@authToken = {{user_login.response.body.token}}
+
+# @name user_register
+
+POST {{base_url}}/register
+Content-Type: application/json
+
+ {
+			"name": "Cliente",
+      "cpf": "12345678901",
+      "email": "cliente@email.com",
+      "gender": "Masculino",
+      "birthday": "1999-03-10",
+      "cep": "2400000",
+      "andress": "Rua do Cliente",
+      "neighborhood": "Bairro do Cliente",
+      "city": "Cidade do Cliente",
+      "state": "RJ",
+      "nHouse": "",
+      "complement": "",
+      "password": "12345678"
+}
+
+###
+
+# @name user_login
+
+POST  {{base_url}}/login
+Content-Type: application/json
+
+{
+	"email": "cliente@email.com",
+	"password": "12345678"
+}
+
+###

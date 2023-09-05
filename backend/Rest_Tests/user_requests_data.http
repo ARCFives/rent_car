@@ -1,0 +1,56 @@
+@base_url = http://localhost:8080
+@authToken = {{login.response.body.token}}
+@userID = 7040a39d-123c-47bb-811a-fc1533d71d97
+
+# @name login
+POST {{base_url}}/oauth/login
+Content-Type: application/json
+
+{
+	"email": "cliente@email.com",
+	"password": "12345678"
+}
+
+###
+
+# @name user_data
+
+GET {{base_url}}/{{userID}}/info
+Authorization: Bearer {{authToken}}
+
+###
+
+# @name update_user_profile
+PUT {{base_url}}/edit/profile/{{userID}}
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+			"name": "Cliente",
+      "cpf": "12345678901",
+      "email": "cliente@email.com",
+      "gender": "Masculino",
+      "birthday": "1999-03-10",
+      "cep": "2400000",
+      "andress": "AV. Presidente Vargas",
+      "neighborhood": "Centro",
+      "city": "Rio de Janeiro",
+      "state": "RJ",
+      "nHouse": "",
+      "complement": ""
+}
+
+###
+
+# @name update_password
+
+PUT {{base_url}}/edit/password/{{userID}}
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+	"oldPassword": "gustavo15",
+	"newPassword": "12345678"
+}
+
+###

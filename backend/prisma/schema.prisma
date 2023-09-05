@@ -1,0 +1,60 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String    @id @default(uuid())
+  name         String
+  cpf          String    @unique
+  email        String    @unique
+  gender       String
+  birthday     String
+  cep          String
+  andress      String
+  neighborhood String
+  city         String
+  state        String
+  nHouse       String?
+  complement   String?
+  password     String
+  reservations Booking[]
+}
+
+model Booking {
+  id               String @id @default(uuid())
+  catchAgency      String
+  catchLocation    String
+  catchDate        String
+  catchHours       String
+  deliveryAgency   String
+  deliveryLocation String
+  deliveryDate     String
+  deliveryHours    String
+  totalBooking     String
+  bookingCode      String @unique
+  carName          String
+  user             User   @relation(fields: [userID], references: [id])
+  userID           String
+}
+
+model Models {
+  id          Int    @id @default(autoincrement())
+  carModel    String
+  priceDiary  Float
+  doorsCount  Int
+  bagsCount   Int
+  paxCount    Int
+  gearType    String
+  carImageUrl String
+}
+
+model Agencies {
+  id            String @id @default(uuid())
+  agencyName    String
+  agencyAndress String
+}

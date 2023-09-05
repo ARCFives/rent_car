@@ -1,0 +1,25 @@
+@base_url = http://localhost:8080
+
+# @name get_all_car_list
+
+GET {{base_url}}/carlist
+
+###
+
+# @name get_all_agencies_list
+
+GET {{base_url}}/listagency
+
+###
+
+# @name get_car_for_id
+
+GET {{base_url}}/carlist/1
+
+###
+
+# @name set_agencies_for_id
+
+GET {{base_url}}/agencies?catchID=c8444bc4-1f6a-42ec-9ebf-9ff8eec3b1c7&deliveryID=c8444bc4-1f6a-42ec-9ebf-9ff8eec3b1c7
+
+###
