@@ -29,6 +29,36 @@ npm install
 
 ## :computer_mouse: Usando o projeto
 
+### :file_cabinet: Backend
+
+Para rodar o servidor, utilize o comando:
+
+```
+npm run dev
+```
+
+Para abrir o banco de dados, pare o servidor e rode o comando:
+
+```
+npx prisma studio
+```
+
+### :desktop_computer: Frontend
+
+Para rodar o frontend da aplicação é necessário que o servidor esteja rodando. Execute o frontend com o comando:
+
+```
+npm run dev
+```
+
+Para fazer login na aplicação utilize as seguintes credenciais:
+
+**Email:** cliente@email.com
+
+**Senha:** 12345678
+
+*Sinta-se a vontade para testar a aplicação registrando uma nova conta.*
+
 ## :hammer_and_wrench: Tecnologias
 
 [![My Skills](https://skillicons.dev/icons?i=react,ts,nodejs,prisma,sqlite,tailwind,figma&theme=dark)](https://skillicons.dev)
