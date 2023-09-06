@@ -34,3 +34,6 @@ npm install
 [![My Skills](https://skillicons.dev/icons?i=react,ts,nodejs,prisma,sqlite,tailwind,figma&theme=dark)](https://skillicons.dev)
 
 ## :bookmark_tabs: Licença
+
+Esse projeto está sob licença. Veja o arquivo [license](LICENSE) para mais detalhes.
+
